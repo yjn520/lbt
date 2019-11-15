@@ -287,44 +287,44 @@
 		var imgsBox=box2.getElementsByClassName('imgs2')[0];
 		var imgs2=imgsBox.getElementsByTagName('li');
 		// 左箭头
-		var arrowL=box2.getElementsByClassName('left2')[0];
+		var arrowz=box2.getElementsByClassName('left2')[0];
 		// 右箭头
-    var arrowR=box2.getElementsByClassName('right2')[0];
+    var arrowy=box2.getElementsByClassName('right2')[0];
     // 按钮
     var dots2=box2.getElementsByClassName('dots2')[0];
     var btns2=dots2.getElementsByTagName('li');
-    var index=0;
+    var index2=0;
 		var m=btns2.length;
 		var v=null;
 		var t=2;
-    function showImg2(index){
-    	for(var i=0;i<n;i++){
-    		imgs2[i].removeAttribute('class');
+    function showImg2(index2){
+    	for(var x=0;x<m;x++){
+    		imgs2[x].removeAttribute('class');
     	}
-    	imgs2[index].className='show';
+    	imgs2[index2].className='show';
     }
 
-    function showBtn2(index){
-    	for(var i=0;i<btns2.length;i++){
-    		btns2[i].removeAttribute('class');
+    function showBtn2(index2){
+    	for(var x=0;x<btns2.length;x++){
+    		btns2[x].removeAttribute('class');
     	}
-    	btns2[index].className='cur2';
+    	btns2[index2].className='cur2';
     }
-		arrowR.onclick=function(){
-    index=index<n-1?index+1:0;
-    showImg2(index);
-    showBtn2(index);
+		arrowy.onclick=function(){
+    index2=index2<m-1?index2+1:0;
+    showImg2(index2);
+    showBtn2(index2);
    
    }
-   arrowL.onclick=function(){
-    index=index>0?index-1:n-1;
-    showImg2(index);
-    showBtn2(index);
+   arrowz.onclick=function(){
+    index2=index2>0?index2-1:m-1;
+    showImg2(index2);
+    showBtn2(index2);
     
    }
-   for(var i=0;i<btns2.length;i++){
-   	btns2[i].index=i;
-   	btns2[i].onclick=function(){
+   for(var x=0;x<btns2.length;x++){
+   	btns2[x].index=x;
+   	btns2[x].onclick=function(){
       index=this.index;
    		showImg2(index);
       showBtn2(index);
@@ -334,7 +334,7 @@
    	clearInterval(v);
    }
    box2.onmouseout=function(){
-     v=setInterval(arrowR.onclick,t*1000);
+     v=setInterval(arrowy.onclick,t*1000);
    }
    box2.onmouseout();
 	</script>
