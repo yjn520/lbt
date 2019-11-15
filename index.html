@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body,ul{
+			margin:0 ;
+			padding:0;
+		}
+		ul{
+			list-style:none;
+		}
+	.imgs	img{
+			display:block;
+			/* vertical-align: middle; */
+		}
+
+		#box1{
+			margin:10px auto;
+			border:10px solid #f00;
+			position: relative;
+			width: 520px;
+			height: 280px;
+		  overflow: hidden;
+		}
+
+		.imgs{
+			position: absolute;
+			display: flex;
+
+			 /* width:2600px; 一个图的宽度乘以图片数量  */
+		}
+		.arrows span{
+			width: 20px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			background:black;
+			color:white;
+			font-weight:bold;
+			font-family: 黑体;
+			position: absolute;
+			top:125px;
+			cursor:pointer;
+			opacity: 0;
+    }
+      .box:hover .arrows span{
+      	opacity: .5;
+    }
+      .box .arrows span:hover{
+      	opacity: 1;
+    }
+
+		 .arrows .left{
+      border-radius: 0 15px 15px 0;
+      left:0;
+      padding-left:5px;
+		}
+		.arrows .right{
+			border-radius: 15px 0 0 15px;
+			right:0;
+			padding-right: 5px;
+		}
+		.dots{
+			position: absolute;
+			display: flex;
+      width:100%;
+      bottom:20px;
+      justify-content: center;
+    }
+    .dots li{
+	    width: 10px;
+	    height: 10px;
+	    line-height: 10px;
+	    text-align: center;
+	    font-size: 24px;
+	    background:white ;
+	    border-radius: 50%;
+	    border:3px solid #ddd;
+	    margin: 0 2px;
+	    cursor: pointer;
+    }
+	 .dots .cur{
+		  background:red ;
+    }
+		
+    /* 第二个 */
+		#box2{
+			margin:10px auto;
+			border:10px solid blue;
+			position: relative;
+			width: 520px;
+			height: 280px;
+		  overflow: hidden;
+		}
+		.imgs2	img{
+			display:block;
+			/* vertical-align: middle; */
+		}
+
+		.imgs2{
+			position: absolute;
+			top:0;
+			left:0;
+		}
+
+		.imgs2 li{
+			position: absolute;
+			top:0;
+			left:0;
+			opacity: 0;
+			z-index:-1;
+			transition: 1s linear;
+		}
+		.imgs2 .show{
+			opacity: 1;
+			z-index: 0;
+		}
+		.arrows2 span{
+			width: 20px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			background:black;
+			color:white;
+			font-weight:bold;
+			font-family: 黑体;
+			position: absolute;
+			top:125px;
+			cursor:pointer;
+			opacity: 0;
+      }
+      .yjn:hover .arrows2 span{
+      	opacity: .5;
+      }
+      .yjn .arrows2 span:hover{
+      	opacity: 1;
+      }
+
+		 .arrows2 .left2{
+      border-radius: 0 15px 15px 0;
+      left:0;
+      padding-left:5px;
+		  }
+		.arrows2 .right2{
+			border-radius: 15px 0 0 15px;
+			right:0;
+			padding-right: 5px;
+		  }
+		.dots2{
+			position: absolute;
+			display: flex;
+      width:100%;
+      bottom:20px;
+      justify-content: center;
+      }
+   .dots2 li{
+	    width: 10px;
+	    height: 10px;
+	    line-height: 10px;
+	    text-align: center;
+	    font-size: 24px;
+	    background:white ;
+	    border-radius: 50%;
+	    border:3px solid gray;
+	    margin: 0 2px;
+	    cursor: pointer;
+      }
+	.dots2 .cur2{
+			background:blue;
+		  }
+	</style>
+</head>
+<body>
+	<!-- 轮播图 -->
+	<div id="box1" class="box">
+		<!-- 图片 -->
+		<ul class="imgs">
+			<li><a href="#"><img src="images/1.jpg" alt="1"></a></li>
+			<li><a href="#"><img src="images/2.jpg" alt="2"></a></li>
+			<li><a href="#"><img src="images/3.jpg" alt="3"></a></li>
+			<li><a href="#"><img src="images/4.jpg" alt="4"></a></li>
+			<li><a href="#"><img src="images/5.jpg" alt="5"></a></li>
+		</ul>
+		<div class="arrows">
+			<!-- 左箭头 -->
+		<span class="left">&lt;</span>
+		<!-- 右箭头 -->
+		<span class="right">&gt;</span>
+		</div>
+		<!-- 底部按钮 -->
+		<ul class="dots">
+			<li class="cur"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+
+	<!-- 轮播图 -->
+	<div id="box2" class="yjn">
+		<!-- 图片 -->
+		<ul class="imgs2">
+			<li class="show"><a href="#"><img src="images/1.jpg" alt="1"></a></li>
+			<li><a href="#"><img src="images/2.jpg" alt="2"></a></li>
+			<li><a href="#"><img src="images/3.jpg" alt="3"></a></li>
+			<li><a href="#"><img src="images/4.jpg" alt="4"></a></li>
+			<li><a href="#"><img src="images/5.jpg" alt="5"></a></li>
+		</ul>
+		<div class="arrows2">
+			<!-- 左箭头 -->
+		<span class="left2">&lt;</span>
+		<!-- 右箭头 -->
+		<span class="right2">&gt;</span>
+		</div>
+		<!-- 底部按钮 -->
+		<ul class="dots2">
+			<li class="cur2"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+
+	<script>
+
+		// 轮播图展示区域
+		var box=document.getElementById('box1');
+		// 图片列表
+		var imgs=box.getElementsByClassName('imgs')[0];
+		// 左箭头
+		var arrowL=box.getElementsByClassName('left')[0];
+		// 右箭头
+    var arrowR=box.getElementsByClassName('right')[0];
+    // 按钮
+    var dots=box.getElementsByClassName('dots')[0];
+    var btns=dots.getElementsByTagName('li');
+    var index=0;
+		var imgWidth=520;
+		var n=btns.length;
+		var t=null;
+		var s=2;
+    function showImg(index){
+    	imgs.style.left=-1*index*imgWidth+'px';
+    }
+    function showBtn(index){
+    	for(var i=0;i<btns.length;i++){
+    		btns[i].removeAttribute('class');
+    	}
+    	btns[index].className='cur';
+    }
+		arrowR.onclick=function(){
+    index=index<n-1?index+1:0;
+    showImg(index);
+    showBtn(index);
+   }
+   arrowL.onclick=function(){
+    index=index>0?index-1:n-1;
+    showImg(index);
+    showBtn(index);
+   }
+   for(var i=0;i<btns.length;i++){
+   	btns[i].index=i;
+   	btns[i].onclick=function(){
+      index=this.index;
+   		showImg(index);
+      showBtn(index);
+   	}
+   }
+   box.onmouseover=function(){
+   	clearInterval(t);
+   }
+   box.onmouseout=function(){
+     t=setInterval(arrowR.onclick,s*1000);
+   }
+   box.onmouseout();
+	</script>
+	
+
+	<script>
+		// 轮播图展示区域
+		var box2=document.getElementById('box2');
+		// 图片列表
+		var imgsBox=box2.getElementsByClassName('imgs2')[0];
+		var imgs2=imgsBox.getElementsByTagName('li');
+		// 左箭头
+		var arrowL=box2.getElementsByClassName('left2')[0];
+		// 右箭头
+    var arrowR=box2.getElementsByClassName('right2')[0];
+    // 按钮
+    var dots2=box2.getElementsByClassName('dots2')[0];
+    var btns2=dots2.getElementsByTagName('li');
+    var index=0;
+		var m=btns2.length;
+		var v=null;
+		var t=2;
+    function showImg2(index){
+    	for(var i=0;i<n;i++){
+    		imgs2[i].removeAttribute('class');
+    	}
+    	imgs2[index].className='show';
+    }
+
+    function showBtn2(index){
+    	for(var i=0;i<btns2.length;i++){
+    		btns2[i].removeAttribute('class');
+    	}
+    	btns2[index].className='cur2';
+    }
+		arrowR.onclick=function(){
+    index=index<n-1?index+1:0;
+    showImg2(index);
+    showBtn2(index);
+   
+   }
+   arrowL.onclick=function(){
+    index=index>0?index-1:n-1;
+    showImg2(index);
+    showBtn2(index);
+    
+   }
+   for(var i=0;i<btns2.length;i++){
+   	btns2[i].index=i;
+   	btns2[i].onclick=function(){
+      index=this.index;
+   		showImg2(index);
+      showBtn2(index);
+   	}
+   }
+   box2.onmouseover=function(){
+   	clearInterval(v);
+   }
+   box2.onmouseout=function(){
+     v=setInterval(arrowR.onclick,t*1000);
+   }
+   box2.onmouseout();
+	</script>
+</body>
+</html>
